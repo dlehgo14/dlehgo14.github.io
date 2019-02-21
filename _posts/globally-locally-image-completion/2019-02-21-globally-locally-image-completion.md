@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "[Globally and Locally Consistent Image Completion] Review"
+title:  "Globally and Locally Consistent Image Completion 논문 Review"
 image: ''
 date:   2019-02-21 15:00:00
 tags:
 - GAN, image completion, CNN
-description: ''
+description: 'Image competion'
 categories:
 - GAN
 ---
@@ -13,7 +13,7 @@ categories:
 번역 + 요약 + 나의 이해를 종합해서 써놓은 글입니다. 많은 질문 + 피드백 환영입니다 :)
 
 ## Abstract
-
+<img src="{{ "/assets/img/globally-locally-image-completion/5.png"}}" alt="">
 <p class="music-read"><a href="https://dl.acm.org/citation.cfm?id=3073659">논문 URL</a></p>
 
 - image completion, inpainting
@@ -42,7 +42,7 @@ full image를 input으로 받는다.
 
 ## Approach
 기본적으로 deep CNN 기반이다. 전체적인 네트워크 구성은 다음 그림과 같다.
-<이미지>
+<img src="{{ "/assets/img/globally-locally-image-completion/2.png"}}" alt="">
 ### Convolutional Neural Networks
 CNN (Fukushima 1988; LeCun et al. 1989) 에 기반하고 있다. ~~CNN이 1980년대 기원이라니~~
 표준 CNN 대신에 **dilated CNN** (Yu and Koltun 2016) 을 사용하였다. dilated CNN을 사용함으로써 더 적은 parameters로 더 넓은 영역을 cover할 수 있다는 논리이다. 
@@ -82,11 +82,11 @@ K80 GPU 4개로 무려 2달간 훈련...
 
 ## Limitations
 Hole이 너무 크면 채울 수 없다. 또는 Hole이 너무 길거나 한 방향으로 치우쳐 있어도 채울 수 없다.
-[fig 13]
+<img src="{{ "/assets/img/globally-locally-image-completion/3.png"}}" alt="">
 
 ## 총평
 사람 얼굴을 복원해 낸 최초의 network인 것 같다.
 2018년도에 나온 GAN을 사용하지 않은 partial conv와의 비교하면 어떨까
 다음과 같이 얼굴이 있어야 할 위치에 얼굴로 채우지 않는 것은 global context가 잘 반영이 안되어 있는 것 같다.
-
+<img src="{{ "/assets/img/globally-locally-image-completion/4.png"}}" alt="">
 
