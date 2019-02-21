@@ -26,7 +26,7 @@ categories:
 지워진 이미지를 복원하기 위해서 textured pattern만이 중요한 것이 아니다.
 scene과 objects의 anatomy를 이해하는 것도 중요하다. 
 가령 다음의 이미지처럼 눈이 있어야 할 부분을 살로 채우면 안될 것이다.
-<이미지>
+<img src="{{ "/assets/img/globally-locally-image-completion/1.png"}}" alt="">
 
 이 work는 Context Encoder (Pathak et al. 2016) 에 기반한다. 
 CE는 CNN을 adversarial loss를 이용해 훈련한 구조이다. 이미지의 feature learning을 위해 도입된 아이디어이지만, **임의의 inpainting mask**와 **높은 해상도의 이미지**를 어떻게 처리할 것인지는 설명하지 못하였다. 그것을 설명하는 내용이다.
