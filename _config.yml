@@ -1,7 +1,7 @@
 # Site settings
 title: JJAPSAE KING
 description: "Graphics studying..."
-baseurl: "/space-jekyll-template" # for test: remove string '/space-jekyll-template' to ''
+baseurl: "" # for test: remove string '/space-jekyll-template' to ''
 url: "https://dlehgo.github.io" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https://yourusername.githu.io'
 
 # User settings
