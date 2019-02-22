@@ -1,4 +1,3 @@
-
 ---
 layout: post
 title:  "Globally and Locally Consistent Image Completion 논문 Review"
@@ -20,35 +19,32 @@ categories:
 
 <p class="music-read"><a href="https://dl.acm.org/citation.cfm?id=3073659">논문 URL</a></p>
 
-- image completion, inpainting
+- image completion, inpainting<br/>
 임의적으로 부분부분이 지워져있는 이미지를 복원해내는 문제이다.
 
-- 2개의 discriminator 사용
+- 2개의 discriminator 사용<br/>
 각각 locally, globally consistent를 유지하게 한다.
 덕분에 얼굴과 같은 highly specific structure의 복원도 가능하다.
 
 ## Introduction
- 지워진 이미지를 복원하기 위해서 textured pattern만이 중요한 것이 아니다.
-scene과 objects의 anatomy를 이해하는 것도 중요하다. 
+ 지워진 이미지를 복원하기 위해서 textured pattern만이 중요한 것이 아니다.<br/>
+scene과 objects의 anatomy를 이해하는 것도 중요하다. <br/>
 가령 다음의 이미지처럼 눈이 있어야 할 부분을 살로 채우면 안될 것이다.
 
 <img src="{{ "/assets/img/globally-locally-image-completion/1.png"}}" alt="">
 
- 이 work는 Context Encoder (Pathak et al. 2016) 에 기반한다. 
+ 이 work는 Context Encoder (Pathak et al. 2016) 에 기반한다. <br/>
 CE는 CNN을 adversarial loss를 이용해 훈련한 구조이다. 이미지의 feature learning을 위해 도입된 아이디어이지만, **임의의 inpainting mask**와 **높은 해상도의 이미지**를 어떻게 처리할 것인지는 설명하지 못하였다. 이 논문에서는 랜덤한 영역이 지워져있는 고해상도 이미지를 complete 하는 것을 보여준다.
 
 > 전체 네트워크는 3가지 네트워크로 구성되어 있다.
 
-1. Completion network 
-
+1. Completion network <br/>
 fully conv net 으로 되어있다.
 
-3. Global context discriminator
-
+3. Global context discriminator<br/>
 full image를 input으로 받는다.
 
-3. Local context discriminator
-
+3. Local context discriminator<br/>
 채워야하는 small region을 input으로 받는다.
 
 ## Approach
@@ -57,7 +53,7 @@ full image를 input으로 받는다.
 <img src="{{ "/assets/img/globally-locally-image-completion/2.png"}}" alt="">
 
 ### Convolutional Neural Networks
- CNN (Fukushima 1988; LeCun et al. 1989) 에 기반하고 있다. ~~CNN이 1980년대 기원이라니..~~
+ CNN (Fukushima 1988; LeCun et al. 1989) 에 기반하고 있다. ~~CNN이 1980년대 기원이라니..~~<br/>
 표준 CNN 대신에 **dilated CNN** (Yu and Koltun 2016) 을 사용하였다. dilated CNN을 사용함으로써 더 적은 parameters로 더 넓은 영역을 cover할 수 있다는 논리이다. 
 
 ### Completion network
@@ -85,10 +81,10 @@ full image를 input으로 받는다.
  preprocessing으로써, 이미지에 채워야하는 부분을 training set의 mean pixel value로 채운다. 
 마찬가지로 D(x, Md) 는 discriminator의 output을 나타낸다.
 Loss는 **MSE**와 **GAN loss**를 동시에 사용하였다.
-> MSE
+> MSE<br/>
 L(x, Mc ) = || Mc ⊙ (C(x, Mc ) − x) || ^ 2
 
-> GAN loss
+> GAN loss<br/>
 min C max D E[ logD(x, Md ) + log(1 − D(C(x, Mc ), Mc ) ]
 
  아무래도 GAN이다 보니, 안정적인 training이 쉽지는 않았다. 여타 GAN과는 달리 noise를 통해서 이미지를 생성해내는 task는 아니기 때문에, 그나마 용이했다. 네트워크에서 나온 output에 간단한 post-processing을 하였다. 반칙 아닌가요?
