@@ -7,7 +7,7 @@ tags:
 - normalization, batch normalization, CNN, BN
 description: 'batch normalization'
 categories:
-- Batch Normalization
+- Normalization
 ---
 
 <br/><br/>

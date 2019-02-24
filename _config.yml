@@ -39,7 +39,7 @@ links:
       key_trigger: 2
     - title: Tags
       url: /tags
-      # key_trigger: 3
+      key_trigger: 3
     # - title: tags
       # url: /tags
       # key_trigger: 4
