@@ -31,14 +31,14 @@ compress_html:
 # Links to include in menu navigation
 links:
   section_1:
-    - title: home
+    - title: Home
       url: /
       key_trigger: 1
-    - title: my posts
-      url: /posts
+    - title: Posts
+      url: /series
       key_trigger: 2
-    # - title: series
-      # url: /series
+    - title: Tags
+      url: /tags
       # key_trigger: 3
     # - title: tags
       # url: /tags
