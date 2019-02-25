@@ -31,7 +31,7 @@ categories:
 
 ## Introduction
 
-데이터 하나 씩 normalize하지 않고, mini-batch 별로 normalize 함으로써 얻을 수 있는 이점은 다음 3가지이다.
+데이터 하나 씩 normalize하지 않고, mini-batch 별로 normalize 함으로써 얻을 수 있는 이점은 다음 2가지이다.
 
 1. mini-batch의 gradient는 전체 data set의 gradient를 더 잘 반영한다.<br/>
 2. 각각의 데이터마다 계산하는 것보다 더욱 빠르게 병렬처리 가능하다.
