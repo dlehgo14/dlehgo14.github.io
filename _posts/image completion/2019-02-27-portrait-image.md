@@ -14,18 +14,19 @@ categories:
 
 ## Abstract
 
-2018년 8월에 발표된 논문입니다. image completion과 extrapolation을 수행한 논문입니다. 다른 관련 연구들에서 portrait(초상화)에서의 사람 몸을 채우는 것에 실패한다는 것을 지적하며 글을 시작합니다. 진짜 그럴까요? <br>
+2018년 8월에 발표된 논문으로, image completion과 extrapolation을 수행한 논문입니다. portrait은 초상화를 뜻하는데, 여기서는 몸까지 나온 인물사진을 주로 다룹니다. 사람을 찍은 이미지에서, 신체 일부분이 지워져있거나(image completion), 이미지에 나타나지 않은 바깥부분 신체를 채우는 것(image extrapolation)을 다룬 논문입니다.
+다른 관련 연구들에서는 사람 몸을 채우는 것에 실패한다는 것을 지적하며 Abstract를 시작합니다. 진짜 그런지 image completion을 다룬 인용수가 높은 논문 2가지를 살펴보았습니다. <br>
 <br>
-<a href="http://openaccess.thecvf.com/content_cvpr_2018/html/Yu_Generative_Image_Inpainting_CVPR_2018_paper.html">Generative Image Inpainting With Contextual Attention</a> 논문은 cvpr 2018에 발표된 논문으로 벌써 인용수가 50회에 달합니다. 
+<a href="http://openaccess.thecvf.com/content_cvpr_2018/html/Yu_Generative_Image_Inpainting_CVPR_2018_paper.html">"Generative Image Inpainting With Contextual Attention"</a> 은 cvpr 2018에 발표된 논문으로 발표된지 1년이 지나지 않았음에도 인용수가 50회에 달합니다. 
 <br>
 <img src="/assets/img/portrait-image/K-001.png">
 <br>
-사람 얼굴이나 자연 경관 등은 채우지만 사람 몸을 완성시키는 결과는 없었습니다.
-<br>
+사람 얼굴이나 자연 경관 등의 이미지를 복원하지만, 사람 몸을 완성시키는 결과는 없었습니다.
+<br><br>
 마찬가지로 nvidia에서 18년도에 발표한 <a href="http://openaccess.thecvf.com/content_ECCV_2018/html/Guilin_Liu_Image_Inpainting_for_ECCV_2018_paper.html">partial conv</a> 논문에서도 사람 몸을 채우는 결과는 확인할 수 없었습니다.
 <img src="/assets/img/portrait-image/K-002.png">
 <br>
-실제로 사람 몸을 잘 채우는 이전 연구는 없는 것 같습니다. 이 논문에서는 이 문제를 2 단계의 딥러닝을 이용하여 해결했습니다. 첫번째 단계에서는 사람의 structure를 복원하고, 두번째 단계에서 실제 사진처럼 보이게 만듭니다. 
+실제로 사람 몸을 잘 채우는 이전 연구는 없는 것 같습니다. 이 논문에서는 이 문제를 2 단계의 딥러닝을 이용하여 해결했습니다. 첫번째 단계에서는 사람의 structure를 복원하고, 두번째 단계에서 1단계의 이미지를 실제처럼 보이게 만듭니다. 
 <br><br>
 
 ## Instruction
