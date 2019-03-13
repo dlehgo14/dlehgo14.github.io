@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Deep Portrait Image Completion and Extrapolation 논문 review"
+title:  "[논문 review] Portrait Image"
 image: ''
 date:   2019-02-27 17:33:00
 tags:

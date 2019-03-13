@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Globally and Locally Consistent Image Completion 논문 Review"
+title:  "[논문 review] globally locally GAN"
 image: ''
 date:   2019-02-21 15:00:00
 tags:

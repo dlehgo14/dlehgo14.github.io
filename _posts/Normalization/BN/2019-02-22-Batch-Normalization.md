@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Batch Normalization 논문 Review"
+title:  "[논문 Review] Batch Normalization"
 image: ''
 date:   2019-02-22 19:33:00
 tags:
