@@ -1,17 +1,16 @@
 <section class="comments">
 
     <h3>Comments</h3>
-    <div id="disqus_thread"></div>
+    <!-- <div id="disqus_thread"></div> -->
 	<script src="https://apis.google.com/js/plusone.js"></script>
 	<div id="comments"></div>
-	
-	<script  type="text/javascript">
-		gapi.comments.render('comments', {
-			href: window.location,
-			width: '624',
-			first_party_property: 'BLOGGER',
-			view_type: 'FILTERED_POSTMOD'
-		});
+	<script>
+	gapi.comments.render('comments', {
+		href: window.location,
+		width: '624',
+		first_party_property: 'BLOGGER',
+		view_type: 'FILTERED_POSTMOD'
+	});
 	</script>
 
 </section>
