@@ -5,8 +5,9 @@ permalink: /series/index.html
 image: '/assets/img/series.png'
 description: "Take a look at my posts..."
 ---
-
-<h2 class="my-title">Posts</h2>
+<div class="my-title">
+<h2>Posts</h2>
+</div>
 {% for tag in site.categories %}
   <span class="tag-title" id="{{ tag[0] | slugify }}">{{ tag[0] | capitalize }}</span>
   <ul class="post-list">
