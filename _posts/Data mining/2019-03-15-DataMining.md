@@ -35,10 +35,8 @@ Then when these **big data** can be used?
   Finance, insurance, IoT, E-commerce, Bioinformatics
 
 The growth of data is explosive. Then how can we treat it? By **automating the collection and availability** of data. 
-
 Where these explosive big data comes from? It is from **business** and **science** and **society, everyone**.
-
-What are the **defininition** of big data? [**3Vs**](https://whatis.techtarget.com/definition/3Vs)
+What are the **definition** of big data? [**3Vs**](https://whatis.techtarget.com/definition/3Vs)
 
 1. Volume
 2. Velocity
@@ -56,8 +54,7 @@ The quantity of information is soaring. So someone has to make the information m
 
 ### Inductive Inference
 
-It is the most important intellectual activity of humans. We know the snowy road is slippery by experience. 
-
+It is the most important intellectual activity of humans. We know the snowy road is slippery by experience.
 What are the factors that influence the accuracy of induction?
 
 - amount of past data
@@ -79,6 +76,8 @@ It is **predicting new records** based on past data.
 
 which copes with **huge amounts of data**. Let's go deeper into the data mining.
 
+
+
 ## Supervised Learning
 
 ### Classification
@@ -96,7 +95,6 @@ Predict **numerical target**
 ## Unsupervised Learning
 
 Goal : **What goes with what**, which is **Segment** 
-
 Also called in **affinity analysis**, or **market basket analysis**.
 
 
@@ -106,17 +104,13 @@ Also called in **affinity analysis**, or **market basket analysis**.
 ### Dimension reduction
 
 Larger the complexity of models, Bigger amount of data which is required *exponentially*.
-
 This is called **curse of dimensionality**.
-
 So reduce the number of variables (columns or attributes).
 
 ### Data reduction
 
 Reduce the number of records (rows), by clustering or others.
-
 Why this is needed? Because some datum can be so similar, so it is not useful, or even may causes **skew**.
-
 Then how does it?
 
 ### Data visualization
@@ -126,7 +120,6 @@ By using graphs or plots of data, it is useful to find the relationships between
 ### Data exploration
 
 Understand global meaning of the data, and detect unusual values *by visualization and reduction*.
-
 **Reviewing** the data to help data mining task.
 
 ---
@@ -153,13 +146,11 @@ The most important steps are **2, 5**, and **9**.
 ### Obtain data
 
 typically use **sampling** to produce statistically-valid results from huge data.
-
-often, our interesting events are rare. So there are **too few interesting cases** in the data set, so have to **oversample** them to obtain a balanced training set.
+Often, our interesting events are rare. So there are **too few interesting cases** in the data set, so have to **oversample** them to obtain a balanced training set.
 
 #### variables
 
 categorical (orderd or non-ordered) or numerical
-
 More is not necessary **(becuase need more records: __curse of dimensionality__)*
 
 > Rules of thumbs:
@@ -173,7 +164,6 @@ More is not necessary **(becuase need more records: __curse of dimensionality__)
 #### detecting outliers
 
 Outliers may cause disproportionate influence on models, so should be detected in pre-processing.
-
 In some contexts, detecing outliers can be the purpose of DM. *(Anomaly detection)*
 
 #### Missing values
@@ -183,18 +173,15 @@ There can be some missing values in data set. Default is **to drop thoses record
 1. Omission
 
    If small records have missing values, **omit those records**.
-
    If values are missed only in small set of variables, **omit those variables**.
-
    If many records have missing values, **ommision is not practical**.
 
 2. Imputation
 
    Replace missing values with reasonable substitutes.
-
    How? Keep records of non-missing values, and use them.
 
-
+---
 
 `03.13 Wednesday`
 
