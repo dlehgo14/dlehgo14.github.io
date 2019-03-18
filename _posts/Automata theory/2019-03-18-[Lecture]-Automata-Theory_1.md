@@ -35,3 +35,13 @@ This course is related with 1, which is about **the impossible problems**. When 
 
 Blue-screen can cause huge damages to some systems, such as power plants, baking systems, cars, and so on. So this problem should be solved, and many strives had been committed to solve it. However, no one succeeded it because **this problem is unsolvable in principle**.
 
+<br>
+
+## Alphabet 
+
+**Finite** and **non-empty** set of symbols. It is denoted by 
+
+∑
+
+\omega
+
