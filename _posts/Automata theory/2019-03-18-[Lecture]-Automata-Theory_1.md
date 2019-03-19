@@ -96,3 +96,8 @@ The language *L(A)* of A is a set of all accepted strings.
 > δ ⊆ Q × Σ × Q
 
 All NFAs can be converted to DFAs by **subset construction**. So NFAs have the same expressive power as DFAs.
+
+
+
+{% include automata.html %}
+
