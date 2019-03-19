@@ -99,5 +99,5 @@ All NFAs can be converted to DFAs by **subset construction**. So NFAs have the s
 
 <br>
 
-{% include automata.html %}
+{% include lectures/automata.html %}
 

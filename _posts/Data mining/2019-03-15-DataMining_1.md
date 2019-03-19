@@ -207,4 +207,4 @@ If data is too small, use **cross-validation**.
 
 <br>
 
-{% include datamining.html %}
+{% include lectures/datamining.html %}
