@@ -204,3 +204,7 @@ training, validation, test
 to prohibit overfitting
 
 If data is too small, use **cross-validation**.
+
+<br>
+
+{% include datamining.html %}
