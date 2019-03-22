@@ -65,9 +65,25 @@ It can be re-parameterized to **polar coordinates**. **r(cos _Θ_ + j sin _Θ_)*
 
 !["Polar transform"](https://s3-us-west-2.amazonaws.com/courses-images-archive-read-only/wp-content/uploads/sites/923/2015/04/25181244/CNX_Precalc_Figure_08_03_0112.jpg)
 
-Then **Θ = tan-1(I/R)**, and **r = root(R^2 + I^2)**. So following equation is true.
+Then **Θ = tan-1(I/R)**, and **r = root(R^2 + I^2)**. So the following equation is true.
 
+> Euler’s formula
 > r(cos _Θ_ + j sin _Θ_) = re^(j _Θ_)
+
+detail explanation: <a href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/fourier.htm">here</a>
+
+### Fourier transforms of natural images
+
+Images divide to **amplitude** and **phase** by Fourier transform. Phase has the detail information of the images.
+
+<br>
+
+## The convolution theorem
+
+The Fourier transform of convolution of 2 functions (images) is same with the product of Fourier transforms of 2 functions.
+
+> _F_{g*h} = _F_{g}_F_{h}
+> _F-1_{gh} = _F-1_{g} * _F-1_{h}
 
 <br>
 
