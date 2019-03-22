@@ -52,7 +52,81 @@ There are 2 kinds of crypto-systems. **Symmetric** and **Asymmetric**. Former on
 
 ![Kerckhoffs' principle](https://image.slidesharecdn.com/cryptographyunderengineering1-141119104437-conversion-gate02/95/cryptography-underengineering-21-638.jpg?cb=1416394167)
 
-This is because the algorithm can be easily discovered by others, by **reverse engineering**.
+This is because the algorithm can be easily discovered by others, by **reverse engineering**. Besides the algorithm is longer than the key, which makes maintaining secrecy easier. Furthermore, to be used by many people, it is practical to use same algorithm and different keys. Theses reasons reach a conclusion of **open cryptography design **(standardization).
+
+<br>
+
+## Classical ciphers
+
+### Transposition cipher
+
+The Spartans used **Scytale cipher**. You can read about it <a href="https://en.wikipedia.org/wiki/Scytale">here</a>. This cipher is super simple.
+
+> key: 12345
+> **H**ENT**E**IDT**L**AEA**P**MRC**M**UAK
+
+For more complexity you can use a longer permuted key.
+
+> key: 4312567
+> **T**TNA**A**PTM**T**SUO**A**ODW**C**OIX**K**NLY**P**ETZ
+
+For more complexity, round more!
+
+> key: 4312567
+> **T**TNA**A**PTM**T**SUO**A**ODW**C**OIX**K**NLY**P**ETZ
+> NSCYAUOPTTWLTMDNAOIEPAXTTOKZ
+
+### Substitution cipher (Caesar cipher)
+
+It is **shift cipher**.
+
+> shift: 3
+> I LOVE YOU -> LORYHBRX
+
+However **the keyspace is too small**. In case of english alphabets, there are only possible 25 keys. (the number of alphabet is 26, but 0 can't be the key.) So **brute-force attack** is possible. Then how big the key should be to prevent exhaustive search? It is at least **2^80**. Then what about permutations of alphabet (one-to-one mapping): its possible keys are 26! (approximately 2^88). However this is not safe because of **the frequency of alphabets** of mono-alphabetic substitution. So  **Vigenère cipher** comes out, which is **poly-alphabetic substitution**. 
+
+![Vigenère cipher](https://images.code.org/06858f88ac12997bba73f4f76638a068-image-1443574425185.gif)
+
+However it is unsafe either. Kasiski examination said that certain common words such as "the" will be encrypted by same key letters, leading to repeated groups in the cipher-text.
+
+5-rotor machine has the same security level with Vigenère cipher that has 11,881,376 length  of the key. However it failed too.
+
+![Rotor machine](http://www.merkle.com/cryo/rotor.gif)
+
+In conclusion, the reason that classical ciphers failed is **the frequency of letters**. **Letter frequency** must be **perfectly random**.
+
+<br>
+
+---
+
+`03.13 Wednesday`
+
+## Perfect Secrecy
+
+Is it possible to make perfect secrecy? What is perfect secrecy? If it is same possibility to guess the plain-text, regardless of knowing cipher-text or not, without key, then it is perfect secrecy. 즉, c를 알든 모르든 m을 알아맞출 확률이 같으면 perfect secrecy를 달성했다고 볼 수 있다. To achieve it, **letter frequency should be random**, and **every plain text is equally likely to be a decryption of cipher-text**, and finally **unbreakable without the key.**
+
+> 3 conditions of perfect secrecy: random, ideal, information theoretic
+
+### Vernam cipher (OTP: One-Time-Pad)
+
+XOR is very useful in cryptography because of this property.
+
+|      | Pr[X] | Pr[Y] |
+| ---- | ----- | ----- |
+| 0    | 1/2   | P0    |
+| 1    | 1/2   | P1    |
+
+When Y is the plain-text that has some letter frequency, and X is the same-length key which has random frequency. then Pr[ (X⊕Y) = 1] = 1/2. So random frequency can be achieved. However the key must be used only once because of **self-reduction** property of XOR. *c1 ⊕ c2 == m1 ⊕ m2*. 
+
+> Shannon's idea (1949)
+> Cipher-text should reveal no information about plain-text.
+
+Surprisingly, **OTP has perfect secrecy**. However it is too impractical, because the keys have to be at least length of the message, and can be used only one time. Furthermore OTP is **malleable**. If someone knows some parts of the message, then can modify the message very easily. How? Just do XOR with replaced messages. 
+
+> k ⊕ m0 = c
+> c ⊕ (m0 ⊕ m1) = c'
+
+
 
 <br>
 
