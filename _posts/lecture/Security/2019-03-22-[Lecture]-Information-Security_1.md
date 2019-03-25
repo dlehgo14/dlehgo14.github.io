@@ -103,7 +103,7 @@ In conclusion, the reason that classical ciphers failed is **the frequency of le
 
 ## Perfect Secrecy
 
-Is it possible to make perfect secrecy? What is perfect secrecy? If it is same possibility to guess the plain-text, regardless of knowing cipher-text or not, without key, then it is perfect secrecy. 즉, c를 알든 모르든 m을 알아맞출 확률이 같으면 perfect secrecy를 달성했다고 볼 수 있다. To achieve it, **letter frequency should be random**, and **every plain text is equally likely to be a decryption of cipher-text**, and finally **unbreakable without the key.**
+Is it possible to make perfect secrecy? What is perfect secrecy? If it is same possibility to guess the plain-text, regardless of knowing cipher-text or not, without key, then it is perfect secrecy. 즉, c를 알든 모르든 m을 알아맞출 확률이 같으면 perfect secrecy를 달성했다고 볼 수 있다. To achieve it, **letter frequency should be random**, and **every plain text is equally likely to be a decryption of cipher-text**, and finally **unbreakable without the key.** And if key is random-uniform, then any message has the same probability to encrypt to specific **c**.
 
 > 3 conditions of perfect secrecy: random, ideal, information theoretic
 
@@ -121,13 +121,51 @@ When Y is the plain-text that has some letter frequency, and X is the same-lengt
 > Shannon's idea (1949)
 > Cipher-text should reveal no information about plain-text.
 
-Surprisingly, **OTP has perfect secrecy**. However it is too impractical, because the keys have to be at least length of the message, and can be used only one time. Furthermore OTP is **malleable**. If someone knows some parts of the message, then can modify the message very easily. How? Just do XOR with replaced messages. 
+Surprisingly, **OTP has perfect secrecy**. However it is too impractical, because the keys have to be at least length of the message, and can be used **only one time**. Furthermore OTP is **malleable**. If someone knows some parts of the message, then can modify the message very easily. How? Just do XOR with replaced messages. 
 
 > k ⊕ m0 = c
 > c ⊕ (m0 ⊕ m1) = c'
 
+<br>
 
+## Practical Security
+
+In **indistinguishability experiment**, attacker give 2 messages to the verifier, and verifier throws the coin. And then encrypt one of 2 messages by the result of the coin. And this encrypted message is given to the attacker, and the attacker should guess which message is encrypted. In this experiment, if secrecy is perfect, the probability should be 1/2. (|k| >= |m|). However to be practical, the following is accepted. negl(n) is very small probability. (roughly 1/2^100)
+
+> ∀A: Pr[ PrivKA = 1 ] ≤ 1/2 + negl(n)
+
+![indistinguishability experiment](https://slideplayer.com/slide/7277800/24/images/8/CPA+Indistinguishability+Experiment.jpg)
+
+Negligibility(*f(n)*) is achieved when **there exists an N, for every n>N, f(n)>1/p(n) such that any polynomial p()**. 
 
 <br>
+
+## Security model
+
+### Ciphertext-only attack (COA)
+
+The attacker only know the ciphertext but nothing, and try to determine underlying plaintext.
+
+### Known-plaintext attack (KPA)
+
+The attacker know some of pairs of plaintexts and ciphertexts under the same key. 
+
+### Chosen-plaintext attack (CPA)
+
+The attacker can know the ciphertexts of any plaintexts.
+
+### Chosen-ciphertext attack (CCA)
+
+The attacker even can know the plaintexts of any ciphertexts (but not directly, so it is his task). 
+
+### Adaptive attacks (CCA2)
+
+The cheating is even possible during attempting to hack. **TRG(True Random Generator)** is hard to realize. So use **PRG(Pseudo Random Generator)**. The conditions of random is **uniform distribution** and **independence**. However independence can't be tested, so use string sample. When poly-time observer can't distinguish strings from TRG and PRG, then PRG succeeds. 
+
+<br>
+
+## Stream cipher
+
+Converting OTP to practical. Alice and Bob should get same keys. So **KSG** is needed. It should be **efficient (deterministic)** and **random**. 
 
 {% include lectures/security.html %}
