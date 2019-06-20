@@ -147,6 +147,67 @@ You can also use **correlation analysis**. As I mentioned, strong correlation co
 
 Create new variables that are linear combinations of the original variables. Those linear combinations are **uncorrelated**. Remove the overlap of **information** between variables, and information is measured by **sum of the variances**. 
 
+|          | Calories | Ratings |
+| -------- | -------- | ------- |
+| Calories | 379.63   | -189.68 |
+| Ratings  | -189.63  | 197.32  |
+
+In the above example, the **total variance** is 379.63 + 197.32. Calories accounts for 66%. Below is the graph of it.  
+
+![example](\assets\img\datamining\pca.png)
+
+Z1 and Z2 are two linear combinations, and Z1 has highest, and Z2 has lowest variation. 
+
+```R
+cereals.df <- read.csv("02. Cereals.csv")
+example <- data.frame(cereals.df$calories, cereals.df$rating)
+pcs <- prcomp(example)
+pcs
+'''
+Standard deviations (1, .., p=2):
+[1] 22.31646  8.88441
+
+Rotation (n x k) = (2 x 2):
+                           PC1       PC2
+cereals.df.calories  0.8470535 0.5315077
+cereals.df.rating   -0.5315077 0.8470535
+'''
+summary(pcs)
+'''
+Importance of components:
+                           PC1    PC2
+Standard deviation     22.3165 8.8844
+Proportion of Variance  0.8632 0.1368
+Cumulative Proportion   0.8632 1.0000
+'''
+```
+
+Z1 and Z2 have correlation 0. (no information overlap) The variables can be more than 2.
+
+```R
+pcs <- prcomp(na.omit(cereals.df[,-c(1:3)]))
+summary(pcs)
+pcs$rotation[,1:5]
+'''
+                   PC1           PC2           PC3           PC4          PC5
+calories  0.0779841812  0.0093115874 -0.6292057595 -0.6010214629  0.454958508
+protein  -0.0007567806 -0.0088010282 -0.0010261160  0.0031999095  0.056175970
+fat      -0.0001017834 -0.0026991522 -0.0161957859 -0.0252622140 -0.016098458
+sodium    0.9802145422 -0.1408957901  0.1359018583 -0.0009680741  0.013948118
+fiber    -0.0054127550 -0.0306807512  0.0181910456  0.0204721894  0.013605026
+carbo     0.0172462607  0.0167832981 -0.0173699816  0.0259482087  0.349266966
+sugars    0.0029888631  0.0002534853 -0.0977049979 -0.1154809105 -0.299066459
+potass   -0.1349000039 -0.9865619808 -0.0367824989 -0.0421757390 -0.047150529
+vitamins  0.0942933187 -0.0167288404 -0.6919777623  0.7141179984 -0.037008623
+shelf    -0.0015414195 -0.0043603994 -0.0124888415  0.0056471836 -0.007876459
+weight    0.0005120017 -0.0009992138 -0.0038059565 -0.0025464145  0.003022113
+cups      0.0005101111  0.0015910125 -0.0006943214  0.0009853800  0.002148458
+rating   -0.0752962922 -0.0717421528  0.3079471212  0.3345338994  0.757708025
+'''
+```
+
+In this case, sodium is dominant factor. It is because of scale (mg). So **normalization**(=standardization) is needed.
+
 <br>
 
 {% include lectures/datamining.html %}

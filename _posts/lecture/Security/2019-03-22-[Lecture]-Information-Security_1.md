@@ -168,4 +168,46 @@ The cheating is even possible during attempting to hack. **TRG(True Random Gener
 
 Converting OTP to practical. Alice and Bob should get same keys. So **KSG** is needed. It should be **efficient (deterministic)** and **random**. 
 
+KSG는 Key Stream Generator의 약자. 
+
+> Random: uniformly distribution + independence
+
+TRG  (True Random Generator)는 truing machine으로 구현하기 어려움. **Pseudorandomness** 는 random의 2가지 특성을 가지고 있다. --> **PRG** 는 TRG와는 다르게 짧은 seed로부터 생성 가능
+
+즉, KSG를 어떻게 만드냐? **PRG**로부터 (efficient and random)
+
+<br>
+
+### PRG
+
+#### LCG (Linear Congruential Generator)
+
+일반적으로 이용되지만, unsecure
+
+> X(n+1) = a X(n) + c mod m
+>
+> e.g., m = 2^31 -1 (소수)
+
+a, c, m은 알려진 값이다. 그러나 모른다고 해도 연립방정식으로 어렵지않게 구할 수 있다.
+
+#### BBS (Blum-Blum-Shub)
+
+암호학적으로 secure하다.
+
+> X(n+1) = X(n)^2 mod M
+>
+> M = pq
+
+M을 알더라도, p와 q를 알아내는 것은 난제이기 때문이다.
+
+#### RC4
+
+깨짐
+
+<br>
+
+## Block cipher
+
+
+
 {% include lectures/security.html %}
