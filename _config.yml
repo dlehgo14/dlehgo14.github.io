@@ -1,18 +1,18 @@
 # Site settings
 title: dohae blog
 description: "Graphics studying..."
-baseurl: "/space-jekyll-template" # for test: remove string '/space-jekyll-template' to ''
+baseurl: "" # for test: remove string '/space-jekyll-template' to ''
 url: "https://dlehgo14.github.io" # for test: remove string 'http://victorvoid.github.io' to '' but in production: 'https://yourusername.githu.io'
 
 # User settings
 username: Dohae Lee
 user_title: Lorem Ipsum - FrontEnd
 email: dlehgo1414@gmail.com
-twitter_username: loremipsum
+twitter_username: 없음
 instagram_username: dlehgo14
 github_username:  dlehgo14
-gplus_username:  loremipsum
-linkedin_public_url: loremipsum # Example: For public profile 'www.linkedin.com/in/john-smith', 'john-smith' is your linkedin_public_url
+gplus_username:  없음
+linkedin_public_url: 없음 # Example: For public profile 'www.linkedin.com/in/john-smith', 'john-smith' is your linkedin_public_url
 disqus_username: dlehgo14
 profile_picture: https://avatars3.githubusercontent.com/u/38254374?s=460&v=4
 
